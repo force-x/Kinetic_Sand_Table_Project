@@ -8,10 +8,6 @@ elbow_step_pin=machine.Pin(21,machine.Pin.OUT)
 elbow_direction_pin=machine.Pin(17,machine.Pin.OUT)
 delay_between_step_microsec = 12000
 
-# shoulder_motor_running=True
-# elbow_motor_running=True
-
-
 def step(forward, motor):
   if (forward):
     if (motor==1):
@@ -85,73 +81,4 @@ def design2():
     steps(210,2)
     steps(-210,2)
 
-# design2()
-
-
-# def make_track(filename):
-#   with open(filename, "r") as f:
-#     curr_coor=[0,0]
-#     while True:
-#       next_coor= f.readline()
-#       if len(next_coor)==0:
-#         break
-#       next_coor=next_coor[-1].split(' ')
-#       theta=float(next_coor[0])
-#       rho=8.5*float(next_coor[1])
-#       #calculate difference between coors
-#       curr_coor=next_coor
-
-#       # print(content)
-
-# make_track("pattern1.txt")
-
-#     lines = [line.rstrip('\n') for line in content]
-
-#     coors = [[0, 0]]
-#     for c in lines:
-#         step_coor = c.split(" ")
-#         step_coor[0] = float(step_coor[0]) #int(float(step_coor[0]))
-#         step_coor[1] = float(step_coor[1]) #int(float(step_coor[1]))
-
-#         coors = coors.append(step_coor)
-
-#     return coors[1:]
-
-# def shoulder_motor():
-#   while shoulder_motor_running:
-#     steps(720,1)
-#     utime.sleep_ms(1000)
-#     steps(-720,1)
-#     utime.sleep_ms(1000)
-
-# def elbow_motor():
-#   while elbow_motor_running:
-#     steps(720,2)
-#     utime.sleep_ms(2000)
-#     steps(-720,2)
-#     utime.sleep_ms(2000)
-
-# th.start_new_thread(shoulder_motor, ())
-# th.start_new_thread(elbow_motor, ())
-
-# count = 0
-# while True:
-#   count += 1
-#   if count >= 10:
-#     break
-#   utime.sleep_ms(1000)
-
-# shoulder_motor_running=False
-# elbow_motor_running=False
-
-
-# while True:
-#   steps(60,1)
-#   utime.sleep_ms(2000)
-#   steps(-60,1)
-#   utime.sleep_ms(2000)
-
-#   steps(60,2)
-#   utime.sleep_ms(2000)
-#   steps(-60,2)
-#   utime.sleep_ms(2000)
+design2()
